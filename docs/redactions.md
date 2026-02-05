@@ -8,9 +8,9 @@ weight = 6
 **Cargo Feature:** `redactions`
 
 For all snapshots created based on `serde::Serialize` output `insta`
-supports redactions.  This permits replacing values with hardcoded other
+supports redactions. This permits replacing values with hardcoded other
 values to make snapshots stable when otherwise random or otherwise changing
-values are involved.  Redactions are an optional feature and can be enabled
+values are involved. Redactions are an optional feature and can be enabled
 with the `redactions` feature.
 
 For "redacting" strings you can use the [filters feature](../filters/) instead.
@@ -31,7 +31,7 @@ They can also be configured [via settings](../settings/).
 The following selectors exist:
 
 - `.key`: selects the given key
-- `.$key`: indexes into the key of a collection.  This can be useful to redact compound keys.
+- `.$key`: indexes into the key of a collection. This can be useful to redact compound keys.
 - `["key"]`: alternative syntax for keys
 - `[index]`: selects the given index in an array
 - `[]`: selects all items on an array
@@ -40,7 +40,7 @@ The following selectors exist:
 - `[start:end]`: selects all items from `start` to `end` (end excluding,
   supports negative indexing).
 - `.*`: selects all keys on that depth
-- `.**`: performs a deep match (zero or more items).  Can only be used once.
+- `.**`: performs a deep match (zero or more items). Can only be used once.
 
 ## Static Redactions
 
@@ -72,7 +72,7 @@ insta::assert_yaml_snapshot!(&User {
 
 It's also possible to execute a callback that can produce a new value
 instead of hardcoding a replacement value by using the
-{{ api_link(item="dynamic_redaction", type="fn") }} function.  This function
+{{ api_link(item="dynamic_redaction", type="fn") }} function. This function
 can also be used to assert that a value follows a specific format before
 redaction:
 
@@ -97,14 +97,14 @@ insta::assert_yaml_snapshot!(&User {
 ```
 
 The two arguments to the callback are of type {{ api_link(item="internals.Content", type="enum") }}
-and {{ api_link(item="internals.ContentPath", type="struct") }}.  You can find
+and {{ api_link(item="internals.ContentPath", type="struct") }}. You can find
 more information in the API documentation about how they work.
 
 ## Sorted Redactions
 
 A special feature of the redaction support is the ability to sort a map or sequence at a selector.
 This is particularly useful if you're working with a `HashSet` or something similar that has non
-deterministic serialization order but you need to assert on it.  As `serde` does not let insta
+deterministic serialization order but you need to assert on it. As `serde` does not let insta
 distinguish between a vector and a set, no automatic ordering can be provided without causing issues
 for the general case.
 
@@ -138,7 +138,7 @@ insta::assert_json_snapshot!(
 ## Rounded Redactions
 
 For floating point values it can be useful to round them to certain number of decimal
-places.  For this you can use the {{ api_link(item="rounded_redaction", type="fn") }} function:
+places. For this you can use the {{ api_link(item="rounded_redaction", type="fn") }} function:
 
 ```rust
 use serde::Serialize;

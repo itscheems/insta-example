@@ -11,9 +11,9 @@ setups.
 ## rstest
 
 If you are using the [rstest crate](https://crates.io/crates/rstest), more specifically the
-`#[case]` feature you might want to use this pattern to ensure a pleasant experience.  Because
+`#[case]` feature you might want to use this pattern to ensure a pleasant experience. Because
 rstest will parametrize your tests insta will normally have challenges associating your
-snapshots with the right parametrized test.  In that situation you can use the following macro
+snapshots with the right parametrized test. In that situation you can use the following macro
 to add a suffix to your snapshot tests specific to your input values:
 
 ```rust
@@ -47,9 +47,9 @@ tests/snapshots/example__it@2-4.snap
 
 ## Uploading Snapshots from GitHub Actions
 
-By default when running in a CI environment, insta won't generate new snapshot files.  When you
+By default when running in a CI environment, insta won't generate new snapshot files. When you
 use GitHub Actions however you can upload build artifacts after the test run to download the
-changed artifacts.  To accomplish this you need to force insta to write new snapshot files.
+changed artifacts. To accomplish this you need to force insta to write new snapshot files.
 
 The following configuration forces files to be created and creates an artifact of all new
 snapshot files.

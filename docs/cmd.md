@@ -13,8 +13,8 @@ which allows to you to easily test command line applications.
 The two most important APIs in `insta_cmd` are
 [`assert_cmd_snapshot`](https://docs.rs/insta-cmd/latest/insta_cmd/macro.assert_cmd_snapshot.html)
 and
-[`get_cargo_bin`](https://docs.rs/insta-cmd/latest/insta_cmd/fn.get_cargo_bin.html).  The
-first is macro which lets you assert the output of a [`Command`](https://doc.rust-lang.org/std/process/struct.Command.html).  The latter is a function that returns the path to a binary (the one from your crate).
+[`get_cargo_bin`](https://docs.rs/insta-cmd/latest/insta_cmd/fn.get_cargo_bin.html). The
+first is macro which lets you assert the output of a [`Command`](https://doc.rust-lang.org/std/process/struct.Command.html). The latter is a function that returns the path to a binary (the one from your crate).
 
 In the most basic example you would end up with something like this:
 
@@ -68,9 +68,9 @@ fn test_echo_back() {
 ## Filtering
 
 The most important aspect when working with command line tools is to use the `filters`
-feature to redact output.  This is because many command line tools use paths and other
-things that make it otherwise hard to snapshot.  It's recommended to use a reusable macro
-to normalize this.  Here an example of some filters:
+feature to redact output. This is because many command line tools use paths and other
+things that make it otherwise hard to snapshot. It's recommended to use a reusable macro
+to normalize this. Here an example of some filters:
 
 ```rust
 macro_rules! apply_common_filters {

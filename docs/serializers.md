@@ -6,8 +6,8 @@ weight = 5
 # Serializers
 
 The best supported snapshot experience is based on [serde](https://serde.rs/)
-because it enables functionality such as redactions.  When you assert on serde
-serializable types you can chose a variety of serialization formats.  The
+because it enables functionality such as redactions. When you assert on serde
+serializable types you can chose a variety of serialization formats. The
 example used for all of these is a list of two structs.
 
 ## Debug
@@ -15,7 +15,7 @@ example used for all of these is a list of two structs.
 This is the only serializer in insta that does not use `serde` behind the scenes
 but instead uses the default `std::fmt::Debug` representation of a value.
 Because this is not based on the `Serialize` trait this serializer does not
-support redactions.  To use it use the {{ api_link(item="assert_debug_snapshot", type="macro") }}
+support redactions. To use it use the {{ api_link(item="assert_debug_snapshot", type="macro") }}
 macro:
 
 ```rust
@@ -43,7 +43,7 @@ are wanted.
 ## YAML
 
 This serializer is available by default and the recommended one for most
-situations.  It's available through the {{ api_link(item="assert_yaml_snapshot", type="macro") }}
+situations. It's available through the {{ api_link(item="assert_yaml_snapshot", type="macro") }}
 macro:
 
 ```rust
@@ -88,7 +88,7 @@ insta::assert_json_snapshot!(&user_list);
 ```
 
 The JSON serializer is mainly useful if you are working with JSON APIs and you
-want to serialize the responses exactly as they happen from the API.  However
+want to serialize the responses exactly as they happen from the API. However
 JSON itself is not ideal for diffs which makes it slightly less nice to work
 with compared to YAML.
 
@@ -105,11 +105,11 @@ insta::assert_compact_json_snapshot!(&range);
 ## TOML
 
 [TOML](https://github.com/toml-lang/toml) is a serialization format which is
-commonly used in configuration files.  It diffs well but unfortunately it cannot
-represent all values that a serde serializer can produce.  As such it's not
+commonly used in configuration files. It diffs well but unfortunately it cannot
+represent all values that a serde serializer can produce. As such it's not
 enabled by default.
 
-You need to activate it with the `toml` feature.  Once enabled it gives you
+You need to activate it with the `toml` feature. Once enabled it gives you
 the {{ api_link(item="assert_toml_snapshot", type="macro") }} macro:
 
 ```rust
@@ -134,10 +134,10 @@ cannot support toplevel arrays.)
 ## RON
 
 [RON](https://github.com/ron-rs/ron) is a serialization format that contains
-Rust type names similar to `Debug`.  It's excellent if you also need to assert
+Rust type names similar to `Debug`. It's excellent if you also need to assert
 on the types of values.
 
-You need to activate it with the `ron` feature.  Once enabled it gives you
+You need to activate it with the `ron` feature. Once enabled it gives you
 the {{ api_link(item="assert_ron_snapshot", type="macro") }} macro:
 
 ```rust
@@ -164,7 +164,7 @@ insta::assert_ron_snapshot!(&user_list);
 [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) is also available as
 serialization format but it only works for some types of values.
 
-You need to activate it with the `csv` feature.  Once enabled it gives you
+You need to activate it with the `csv` feature. Once enabled it gives you
 the {{ api_link(item="assert_csv_snapshot", type="macro") }} macro:
 
 ```rust
