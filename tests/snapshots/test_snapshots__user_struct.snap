@@ -1,0 +1,7 @@
+---
+source: tests/test_snapshots.rs
+expression: user
+---
+name: Bob
+age: 25
+active: false

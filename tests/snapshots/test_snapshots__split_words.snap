@@ -1,0 +1,9 @@
+---
+source: tests/test_snapshots.rs
+expression: words
+---
+- hello
+- from
+- the
+- other
+- side

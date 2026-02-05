@@ -1,0 +1,5 @@
+---
+source: tests/test_snapshots.rs
+expression: sum
+---
+21
